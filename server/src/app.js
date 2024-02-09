@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const seedDatabase = require('./seed');
 
 const app = express();
 
@@ -13,5 +14,15 @@ app.use(cors());
 
 // Routes
 app.use('/api/tasks', require('./routes/tasks'));
+
+// Call the seedDatabase function asynchronously
+(async () => {
+    try {
+    await seedDatabase();
+    } catch (error) {
+    console.error('Error seeding database:', error);
+    process.exit(1);
+    }
+})();
 
 module.exports = app;

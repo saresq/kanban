@@ -30,7 +30,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onDeleteTask, onTaskClick }) 
   }
 
   return (
-    <div className="flex items-center justify-between cursor-pointer bg-white/75 hover:bg-white/50 p-5 rounded mb-3" onClick={handleCardClick}>
+    <div className="flex items-center justify-between cursor-pointer bg-white/75 hover:bg-white p-5 rounded mb-3" onClick={handleCardClick}>
       <div className="text-black">
         <span className="opacity-50 text-sm">{formatDate(task.created_at)}</span>
         <h1 className="text-xl capitalize mb-4">{task.name}</h1>

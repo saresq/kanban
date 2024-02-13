@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Task } from "../Types";
 import CloseIcon from "./icons/CloseIcon";
 
-interface KanbanModalProps {
+interface ModalProps {
   task: Task | null;
   onClose: () => void;
   onSave: (name: string, description: string, state: string) => void;
 }
 
-const KanbanModal: React.FC<KanbanModalProps> = ({ task, onClose, onSave }) => {
+const Modal: React.FC<ModalProps> = ({ task, onClose, onSave }) => {
   const [name, setName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [state, setState] = useState<string>('');
@@ -22,7 +22,7 @@ const KanbanModal: React.FC<KanbanModalProps> = ({ task, onClose, onSave }) => {
       setName('');
       setDescription('');
     }
-  }, [task]);
+  }, []);
 
   useEffect(() => {
     const handleEscapeKeyPress = (event: KeyboardEvent) => {
@@ -104,4 +104,4 @@ const KanbanModal: React.FC<KanbanModalProps> = ({ task, onClose, onSave }) => {
   );
 };
 
-export default KanbanModal;
+export default Modal;

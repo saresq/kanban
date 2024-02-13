@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Task } from "../Types";
 import KanbanColumn from "./KanbanColumn";
-import KanbanModal from "./KanbanModal";
+import Modal from "./Modal";
 import { fetchData, addTask, editTask, deleteTask } from "../Api";
 
 function Kanban() {
@@ -83,7 +83,7 @@ function Kanban() {
   return (
     <>
       <div className="flex">
-        <div className="w-1/2 mt-6">
+        <div className="w-1/2">
           <div>
             <h1 className="text-xl">Filters</h1>
             <input
@@ -158,7 +158,7 @@ function Kanban() {
         </button>
       </div>
       <div className="flex justify-center mt-10 h-auto w-full">
-        <div className="grid grid-cols-3 gap-4 grow select-none">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 grow select-none">
           <KanbanColumn
             title="TODO"
             tasks={sortedData.filter((task: Task) => filterTasksByStateAndName(task) && task.state === 'Por hacer')}
@@ -181,7 +181,7 @@ function Kanban() {
       </div>
 
       {shouldShowModal && (
-        <KanbanModal
+        <Modal
           task={selectedTask}
           onClose={() => setShouldShowModal(false)}
           onSave={handleTaskSave}

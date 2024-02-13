@@ -29,7 +29,10 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({ title, tasks, onDeleteTask,
 
   return (
     <div className={`${bgColorClass} p-4 min-h-64 rounded`}>
-      <h2 className="text-2xl font-semibold text-white mb-4">{title}</h2>
+      <h2 className="text-2xl font-semibold text-white mb-4 opacity-75">{title}</h2>
+      {tasks.length === 0 &&
+        <div className="text-center italic mt-9"> No hay tareas en este estado </div>
+      }
       {tasks.map((task: Task) => (
         <TaskCard key={task._id} task={task} onDeleteTask={onDeleteTask} onTaskClick={onTaskClick} />
       ))}

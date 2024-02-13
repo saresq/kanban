@@ -9,14 +9,14 @@ const seedDatabase = async () => {
       useUnifiedTopology: true,
     });
 
-    // Remove existing tasks
-    await Task.deleteMany({});
+    // Uncomment next line if you want to delete all db records before loading dummy data
+    // await Task.deleteMany({});
 
     // Create dummy tasks
     const dummyTasks = [
-      { name: 'Task 1', description: 'Description 1', state: 'Por hacer' },
-      { name: 'Task 2', description: 'Description 2', state: 'En progreso' },
-      { name: 'Task 3', description: 'Description 3', state: 'Hecho' },
+      { name: 'Mejorar Estilos', description: 'Revisar UI de la plataforma', state: 'Por hacer' },
+      { name: 'Drag and Drop', description: 'Evaluar librerias de DnD para futura implementación', state: 'En progreso' },
+      { name: 'Completar Challenge', description: 'Realizar todas las tareas requeridas por el challenge', state: 'Hecho' },
     ];
 
     // Insert dummy tasks into the database

@@ -149,8 +149,16 @@ function Kanban() {
         </div>
       </div>
 
+      <div className="mt-6 w-full text-center">
+        <button
+          onClick={() => setShouldShowModal(true)}
+          className="px-4 py-2 bg-blue-500 text-white rounded-full shadow hover:bg-blue-600"
+        >
+          Add New Task
+        </button>
+      </div>
       <div className="flex justify-center mt-10 h-auto w-full">
-        <div className="grid grid-cols-3 gap-4 grow">
+        <div className="grid grid-cols-3 gap-4 grow select-none">
           <KanbanColumn
             title="TODO"
             tasks={sortedData.filter((task: Task) => filterTasksByStateAndName(task) && task.state === 'Por hacer')}
@@ -170,14 +178,6 @@ function Kanban() {
             onTaskClick={handleTaskClick}
           />
         </div>
-      </div>
-      <div className="mt-6 w-full text-center">
-        <button
-          onClick={() => setShouldShowModal(true)}
-          className="px-4 py-2 bg-blue-500 text-white rounded-full shadow hover:bg-blue-600"
-        >
-          Add New Task
-        </button>
       </div>
 
       {shouldShowModal && (

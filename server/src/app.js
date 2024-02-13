@@ -15,7 +15,7 @@ app.use(cors());
 // Routes
 app.use('/api/tasks', require('./routes/tasks'));
 
-// Call the seedDatabase function asynchronously
+// Call the seedDatabase function -- Comment this block to stop seeding db on next runs
 (async () => {
   try {
     await seedDatabase();

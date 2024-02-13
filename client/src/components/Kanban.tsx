@@ -108,8 +108,8 @@ function Kanban() {
             Sort By:
             <button className="ml-2 px-3 py-1 bg-orange-200 text-orange-800 rounded-full" onClick={() => handleSort('name')}>Name</button>
             <button className="ml-2 px-3 py-1 bg-orange-200 text-orange-800 rounded-full" onClick={() => handleSort('createdAt')}>Creation Date</button>
-            </div>
           </div>
+        </div>
         <div className="w-1/2 flex justify-end items-end flex-col">
 
           {(nameFilter || stateFilter) && (
@@ -134,10 +134,10 @@ function Kanban() {
           {(sortField && sortOrder) && (
             <div className="mt-4 text-right flex">
               Sorted By:
-                <span className="ml-2 px-3 py-1 bg-orange-200 text-orange-800 rounded-full">
-                  {sortField === 'createdAt' ? 'Creation Date' : 'Name'} &nbsp;
-                  {sortOrder === 'asc' ? '▲' : '▼'}
-                </span>
+              <span className="ml-2 px-3 py-1 bg-orange-200 text-orange-800 rounded-full">
+                {sortField === 'createdAt' ? 'Creation Date' : 'Name'} &nbsp;
+                {sortOrder === 'asc' ? '▲' : '▼'}
+              </span>
               <button
                 onClick={clearSort}
                 className="ml-8 px-2 bg-gray-500 text-white rounded shadow hover:bg-gray-600"

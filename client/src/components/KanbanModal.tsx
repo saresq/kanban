@@ -8,7 +8,7 @@ interface KanbanModalProps {
   onSave: (name: string, description: string, state: string) => void;
 }
 
-const KanbanModal: React.FC<KanbanModalProps> = ({task, onClose, onSave}) => {
+const KanbanModal: React.FC<KanbanModalProps> = ({ task, onClose, onSave }) => {
   const [name, setName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [state, setState] = useState<string>('');
@@ -71,13 +71,13 @@ const KanbanModal: React.FC<KanbanModalProps> = ({task, onClose, onSave}) => {
           onChange={(e) => setDescription(e.target.value)}
           className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 mb-6"
         />
-        { mode === "EDIT" && 
+        {mode === "EDIT" &&
           <>
             <label>Estado:</label>
             <select
-            value={state}
-            onChange={(e) => setState(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 mb-6"
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+              className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 mb-6"
             >
               <option value="Por hacer">Por hacer</option>
               <option value="En progreso">En progreso</option>

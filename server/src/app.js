@@ -17,12 +17,12 @@ app.use('/api/tasks', require('./routes/tasks'));
 
 // Call the seedDatabase function asynchronously
 (async () => {
-    try {
+  try {
     await seedDatabase();
-    } catch (error) {
+  } catch (error) {
     console.error('Error seeding database:', error);
     process.exit(1);
-    }
+  }
 })();
 
 module.exports = app;

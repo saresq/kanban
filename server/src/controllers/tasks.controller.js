@@ -13,11 +13,11 @@ taskCtrl.getTasks = async (req, res) => {
 };
 
 taskCtrl.createTask = async (req, res) => {
-  const { nombre, descripcion } = req.body;
+  const { name, description } = req.body;
   const newTask = new Task({
-    nombre,
-    descripcion,
-    estado: 'Por hacer', // Assuming 'Por hacer' is the default state
+    name,
+    description,
+    state: 'Por hacer', // Assuming 'Por hacer' is the default state
   });
   try {
     await newTask.save();
@@ -30,9 +30,13 @@ taskCtrl.createTask = async (req, res) => {
 
 taskCtrl.updateTask = async (req, res) => {
   const taskId = req.params.id;
-  const { nombre, descripcion, estado } = req.body;
+  const { name, description, state } = req.body;
   try {
-    const updatedTask = await Task.findByIdAndUpdate(taskId, { nombre, descripcion, estado }, { new: true });
+    const updatedTask = await Task.findByIdAndUpdate(
+      taskId,
+      { name, description, state },
+      { new: true },
+    );
     if (updatedTask) {
       res.send({ message: 'Task updated successfully', task: updatedTask });
     } else {

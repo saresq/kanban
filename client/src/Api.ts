@@ -1,21 +1,8 @@
 // api.ts
 import axios, { AxiosResponse } from "axios";
+import { NewTask, Task } from "./Types";
 
 const API_URL = 'http://localhost:5000/api';
-
-interface Task {
-  _id: string;
-  name: string;
-  description: string;
-  state: "Por hacer" | "En progreso" | "Hecho";
-  created_at: Date;
-}
-
-interface NewTask {
-  name: string;
-  description: string;
-  state: string;
-}
 
 export const fetchData = async (nameFilter: string, stateFilter: string, sortField: string, sortOrder: string): Promise<Task[]> => {
   try {

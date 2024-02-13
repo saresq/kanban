@@ -1,6 +1,6 @@
 // KanbanColumn.tsx
 import React from "react";
-import Task from "../Types";
+import { Task } from "../Types";
 import TaskCard from "./TaskCard";
 
 interface KanbanColumnProps {

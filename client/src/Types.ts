@@ -1,4 +1,4 @@
-interface Task {
+export interface Task {
   _id: string;
   name: string;
   description: string;
@@ -6,4 +6,8 @@ interface Task {
   created_at: Date;
 }
 
-export default Task;
+export interface NewTask {
+  name: string;
+  description: string;
+  state: string;
+}

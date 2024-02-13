@@ -1,5 +1,5 @@
 import React from "react";
-import Task from "../Types";
+import { Task } from "../Types";
 import TrashIcon from "./icons/TrashIcon";
 
 interface TaskCardProps {

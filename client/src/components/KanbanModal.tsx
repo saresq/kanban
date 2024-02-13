@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Task from "../Types";
+import { Task } from "../Types";
 import CloseIcon from "./icons/CloseIcon";
 
 interface KanbanModalProps {

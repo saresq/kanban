@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import Task from "../Types";
+import { Task } from "../Types";
 import KanbanColumn from "./KanbanColumn";
 import KanbanModal from "./KanbanModal";
 import { fetchData, addTask, editTask, deleteTask } from "../Api";

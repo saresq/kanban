@@ -1,6 +1,8 @@
 ## Kanban - Saresq
 Node v18.18.2
+
 Client: Vite - React - Typescript - Axios - Tailwind
+
 Server: Node - Express - Mongo - Mongoose
 
 #### Running the Project

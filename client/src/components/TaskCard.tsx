@@ -29,14 +29,28 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onDeleteTask, onTaskClick }) 
     return `${day}/${month}/${year} - ${hours}:${minutes}`;
   }
 
+  let borderColor = '';
+
+  switch (task.state.toLowerCase()) {
+    case 'por hacer':
+      borderColor = 'border-blue-500';
+      break;
+    case 'en progreso':
+      borderColor = 'border-yellow-500';
+      break;
+    case 'hecho':
+      borderColor = 'border-green-500';
+      break;
+  }
+
   return (
-    <div className="flex items-center justify-between cursor-pointer bg-white/75 hover:bg-white p-5 rounded mb-3" onClick={handleCardClick}>
+    <div className={`${borderColor} flex items-center justify-between cursor-pointer bg-white/75 hover:bg-white p-5 border-l-4 rounded mb-3`} onClick={handleCardClick}>
       <div className="text-black">
         <span className="opacity-50 text-sm">{formatDate(task.created_at)}</span>
         <h1 className="text-xl capitalize mb-4">{task.name}</h1>
         <p>{task.description}</p>
       </div>
-      <button className="bg-red-500/75 hover:bg-red-900 p-3 rounded" onClick={handleButtonClick}><TrashIcon /></button>
+      <button className="bg-red-500/75 hover:bg-red-900 p-3 rounded-full" onClick={handleButtonClick}><TrashIcon /></button>
     </div>
   );
 };

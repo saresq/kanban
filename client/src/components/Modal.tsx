@@ -58,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({ task, onClose, onSave }) => {
         <label>Nombre:</label>
         <input
           type="text"
-          placeholder="Task Name"
+          placeholder="Nombre de la tarea"
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 mb-6"
@@ -66,7 +66,7 @@ const Modal: React.FC<ModalProps> = ({ task, onClose, onSave }) => {
         <label>Descripción:</label>
         <input
           type="text"
-          placeholder="Task Description"
+          placeholder="Descripción de la tarea"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 mb-6"

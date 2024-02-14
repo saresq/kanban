@@ -11,24 +11,22 @@ interface KanbanColumnProps {
 }
 
 const KanbanColumn: React.FC<KanbanColumnProps> = ({ title, tasks, onDeleteTask, onTaskClick }) => {
-  let bgColorClass = '';
+  let borderColor = '';
 
   switch (title.toLowerCase()) {
-    case 'todo':
-      bgColorClass = 'border-blue-500';
+    case 'por hacer':
+      borderColor = 'border-blue-500';
       break;
-    case 'in progress':
-      bgColorClass = 'border-yellow-500';
+    case 'en progreso':
+      borderColor = 'border-yellow-500';
       break;
-    case 'done':
-      bgColorClass = 'border-green-500';
+    case 'hecho':
+      borderColor = 'border-green-500';
       break;
-    default:
-      bgColorClass = '';
   }
 
   return (
-    <div className={`${bgColorClass} bg-neutral-700 p-4 border-t-8 min-h-64 rounded`}>
+    <div className={`${borderColor} bg-neutral-700 p-4 border-t-8 min-h-64 rounded`}>
       <h2 className="text-2xl font-semibold text-white mb-4">{title}</h2>
       {tasks.length === 0 &&
         <div className="text-center italic mt-9"> No hay tareas en este estado </div>
